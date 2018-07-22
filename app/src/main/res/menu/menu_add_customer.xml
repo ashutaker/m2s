@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context='.AddCustomerActivity'>
+
+    <item
+        android:id="@+id/getContact"
+        android:icon="@drawable/baseline_contact_phone_white_24dp"
+        android:title="Contacts"
+        app:showAsAction="always" />
+</menu>

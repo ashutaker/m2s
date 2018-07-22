@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_cus"
+        android:icon="@drawable/round_account_box_black_24dp"
+        android:title="@string/nav_customer" />
+    <item
+        android:id="@+id/nav_prod"
+        android:icon="@drawable/round_all_product_black_24dp"
+        android:title="@string/nav_product" />
+    <item
+        android:id="@+id/nav_sale"
+        android:icon="@drawable/round_attach_money_black_24dp"
+        android:title="@string/nav_sale" />
+</menu>
