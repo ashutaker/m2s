@@ -1,14 +1,24 @@
 package com.learn.ashutosh.bottomnav;
 
+import android.app.Application;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import com.learn.ashutosh.bottomnav.DataModel.Customer;
+import com.learn.ashutosh.bottomnav.ViewModel.CustomerViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private CustomersFragment customersFragment;
     private ProductsFragment productsFragment;
     private SalesFragment salesFragment;
+    private static final String TAG = "MainActivity";
+
 
 
     @Override
@@ -67,11 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     private void setFragment(Fragment fragment) {
-        String fragmentTag = fragment.getTag();
+        //String fragmentTag = fragment.getTag();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame,fragment);
-        fragmentTransaction.addToBackStack(fragmentTag);
+        //fragmentTransaction.addToBackStack(fragmentTag);
         fragmentTransaction.commit();
     }
 }

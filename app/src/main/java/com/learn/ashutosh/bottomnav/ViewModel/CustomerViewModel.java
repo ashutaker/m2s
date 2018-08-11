@@ -26,7 +26,7 @@ public class CustomerViewModel extends AndroidViewModel {
 
     }
 
-    public LiveData<List<Customer>> getmAllCustomers() {
+    public LiveData<List<Customer>> getAllCustomers() {
         return mAllCustomers;
     }
 

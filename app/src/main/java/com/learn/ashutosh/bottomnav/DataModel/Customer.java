@@ -1,6 +1,7 @@
 package com.learn.ashutosh.bottomnav.DataModel;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -21,6 +22,19 @@ public class Customer {
 
     @NonNull
     private String Address;
+
+    @Ignore
+    public Customer(@NonNull String customerName, @NonNull String phone,
+                    @NonNull String email, @NonNull String address) {
+
+        this.customerName = customerName;
+        this.phone = phone;
+        this.email = email;
+        Address = address;
+    }
+
+    public Customer() {
+    }
 
     @NonNull
     public int getId() {
