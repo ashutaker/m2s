@@ -14,7 +14,6 @@ public class CustomerViewModel extends AndroidViewModel {
 
     private CustomerRepository mRepository;
 
-
     //To cache list of customers
     private LiveData<List<Customer>> mAllCustomers;
 

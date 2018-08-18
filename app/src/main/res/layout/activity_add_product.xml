@@ -14,14 +14,13 @@
         android:background="@color/colorPrimary"
         android:elevation="4dp"
         android:textAlignment="center"
-        app:navigationIcon="?attr/homeAsUpIndicator"
         app:title="Add a product"
         app:titleTextColor="@color/colorWhite">
 
     </android.support.v7.widget.Toolbar>
 
     <EditText
-        android:id="@+id/productName"
+        android:id="@+id/productName_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_prod_toolbar" />
 
     <EditText
-        android:id="@+id/quantity"
+        android:id="@+id/quantity_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -42,10 +41,10 @@
         android:hint="Quantity"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName" />
+        app:layout_constraintTop_toBottomOf="@+id/productName_add" />
 
     <EditText
-        android:id="@+id/productID"
+        android:id="@+id/productID_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -54,10 +53,10 @@
         android:hint="Product id"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantity" />
+        app:layout_constraintTop_toBottomOf="@+id/quantity_add" />
 
     <EditText
-        android:id="@+id/prodCostPrice"
+        android:id="@+id/prodCostPrice_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,10 +66,10 @@
         android:inputType="number"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productID" />
+        app:layout_constraintTop_toBottomOf="@+id/productID_add" />
 
     <EditText
-        android:id="@+id/prodSellPrice"
+        android:id="@+id/prodSellPrice_add"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -79,17 +78,17 @@
         android:hint="Selling Price"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prodCostPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/prodCostPrice_add" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_add_product"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/colorAccent"
-        android:text="Add a Product"
+        android:text="Add product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
