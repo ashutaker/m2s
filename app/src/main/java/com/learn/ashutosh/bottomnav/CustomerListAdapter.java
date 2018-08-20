@@ -12,53 +12,55 @@ import com.learn.ashutosh.bottomnav.DataModel.Customer;
 
 import java.util.List;
 
-class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapter.ViewHolder> {
-
+public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapter.CustomerViewHolder> {
     private final LayoutInflater mInflater;
-    private List<Customer> mCustomerList; // Cache copy of customer list
 
-    public CustomerListAdapter(Context context) {
-        mInflater = LayoutInflater.from(context);
-    }
+    private List<Customer> mCustomerList;
+
+    CustomerListAdapter(Context context){ mInflater = LayoutInflater.from(context); }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.customer_list_item, parent, false);
-        return new ViewHolder(itemView);
+    public CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = mInflater.inflate(R.layout.customer_list_item,parent,false);
+        return new CustomerViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        if (mCustomerList != null) {
-            Customer selected = mCustomerList.get(position);
-            holder.tvCustomerName.setText(selected.getCustomerName());
+    public void onBindViewHolder(@NonNull CustomerViewHolder holder, int position) {
+        if(mCustomerList!= null){
+            Customer current = mCustomerList.get(position);
+            holder.customerName.setText(current.getCustomerName());
+        }else {
+            holder.customerName.setText("No customer added !!");
         }
+
     }
 
     @Override
     public int getItemCount() {
-        if (mCustomerList != null) {
+        if(mCustomerList != null){
             return mCustomerList.size();
-        } else return 0;
+        }else { return 0;}
     }
 
-    void setCustomer(List<Customer> customer) {
+    void setCustomer(List<Customer> customer){
         mCustomerList = customer;
         notifyDataSetChanged();
     }
 
-    //Binds View from the list item
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    //Bind View for the customer list item here
+    class CustomerViewHolder extends RecyclerView.ViewHolder{
 
-        private final TextView tvCustomerName;
-
-        public ViewHolder(View itemView) {
+        private final TextView customerName;
+        private CustomerViewHolder(View itemView){
             super(itemView);
-            tvCustomerName = itemView.findViewById(R.id.item_cust_name);
+            customerName = itemView.findViewById(R.id.item_cust_name);
         }
+
     }
+
+
 
 
 }
