@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/prod_name"
+            android:id="@+id/item_prod_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -32,7 +32,7 @@
             android:layout_marginTop="8dp"
             android:text="ID"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prod_name" />
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
 
         <TextView
             android:id="@+id/item_product_id"
@@ -42,16 +42,17 @@
             android:layout_marginTop="8dp"
             android:text="Mechanical 101"
             app:layout_constraintStart_toEndOf="@+id/item_product_id_label"
-            app:layout_constraintTop_toBottomOf="@+id/prod_name" />
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
 
         <TextView
             android:id="@+id/item_product_cost_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:text="Cost:"
-            app:layout_constraintTop_toBottomOf="@+id/prod_name"
-            tools:layout_editor_absoluteX="156dp" />
+            app:layout_constraintStart_toEndOf="@+id/item_product_id"
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
 
         <TextView
             android:id="@+id/item_product_cost"
@@ -61,7 +62,17 @@
             android:layout_marginTop="8dp"
             android:text="2000"
             app:layout_constraintStart_toEndOf="@+id/item_product_cost_label"
-            app:layout_constraintTop_toBottomOf="@+id/prod_name" />
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
+
+        <TextView
+            android:id="@+id/item_product_quantity__label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Quantity:"
+            app:layout_constraintEnd_toStartOf="@+id/item_product_quantity"
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
 
 
         <TextView
@@ -72,17 +83,9 @@
             android:layout_marginTop="8dp"
             android:text="99"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prod_name" />
+            app:layout_constraintTop_toBottomOf="@+id/item_prod_name" />
 
 
-        <TextView
-            android:id="@+id/item_product_quantity__label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="Quantity:"
-            app:layout_constraintEnd_toStartOf="@+id/item_product_quantity"
-            tools:layout_editor_absoluteY="48dp" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -35,15 +35,12 @@ import static android.app.Activity.RESULT_OK;
 public class CustomersFragment extends Fragment {
 
     private static final String TAG = "CustomersFragment";
-
     private CustomerViewModel mCustomerViewModel;
     public static final int NEW_CUSTOMER_ACTIVITY_REQUEST_CODE = 1;
-
 
     public CustomersFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,11 +59,9 @@ public class CustomersFragment extends Fragment {
             }
         });
 
-
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        // Inflate the layout for this fragment
         return rootView;
     }
 

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         salesFragment = new SalesFragment();
 
         setSupportActionBar(mtoolbar);
-        setFragment(customersFragment);
+        setFragment(productsFragment);
 
 
 
@@ -76,10 +76,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-
 
     private void setFragment(Fragment fragment) {
         //String fragmentTag = fragment.getTag();

@@ -43,6 +43,12 @@ public class ProductsFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.i(TAG, "Product Fragment created !!");
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,11 +57,10 @@ public class ProductsFragment extends Fragment {
 
         mProductViewModel = ViewModelProviders.of((FragmentActivity) getActivity()).get(ProductViewModel.class);
         // Inflate the layout for this fragment
-        final ProductListAdapter productListAdapter = new ProductListAdapter(getActivity());
-
         View rootView = inflater.inflate(R.layout.fragment_products, container, false);
         RecyclerView recyclerView = rootView.findViewById(R.id.product_recycler);
 
+        final ProductListAdapter productListAdapter = new ProductListAdapter(getActivity());
         mProductViewModel.getAllProducts().observe((LifecycleOwner) getActivity(), new Observer<List<Product>>() {
             @Override
             public void onChanged(@Nullable List<Product> products) {
@@ -66,6 +71,7 @@ public class ProductsFragment extends Fragment {
         recyclerView.setAdapter(productListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        Log.i(TAG, "On create view");
         return rootView ;
     }
 

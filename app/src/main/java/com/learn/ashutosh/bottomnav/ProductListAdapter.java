@@ -35,8 +35,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         if (mAllProducts != null) {
             Product selected = mAllProducts.get(position);
-            holder.cost.setText(selected.getCostPrice());
-            holder.quantity.setText(selected.getQuantity());
+            holder.cost.setText(String.valueOf(selected.getCostPrice()));
+            holder.quantity.setText(String.valueOf(selected.getQuantity()));
             holder.prodId.setText(selected.getProductId());
             holder.prodName.setText(selected.getProductName());
 
@@ -63,7 +63,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
         public ProductViewHolder(View itemView) {
             super(itemView);
-            prodName = itemView.findViewById(R.id.prod_name);
+            prodName = itemView.findViewById(R.id.item_prod_name);
             prodId = itemView.findViewById(R.id.item_product_id);
             quantity = itemView.findViewById(R.id.item_product_quantity);
             cost = itemView.findViewById(R.id.item_product_cost);
