@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 
 import com.learn.ashutosh.bottomnav.DataModel.Customer;
 import com.learn.ashutosh.bottomnav.DataModel.Product;
+import com.learn.ashutosh.bottomnav.DataModel.Sale;
 
 @Database(entities = {Customer.class,Product.class}, version = 1)
 public abstract class DatabaseRoom extends RoomDatabase {
@@ -19,6 +20,7 @@ public abstract class DatabaseRoom extends RoomDatabase {
 
     public abstract CustomerDao customerDao();
     public abstract ProductDao productDao();
+    public abstract SaleDao saleDao();
 
     public static DatabaseRoom getDatabase(final Context context) {
         if (INSTANCE == null) {
@@ -48,10 +50,12 @@ public abstract class DatabaseRoom extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void,Void,Void> {
         private final CustomerDao mCustomerDao;
         private final ProductDao mProductDao;
+        private final SaleDao mSaleDao;
 
         public PopulateDbAsync(DatabaseRoom database) {
             mCustomerDao = database.customerDao();
             mProductDao = database.productDao();
+            mSaleDao = database.saleDao();
         }
 
         @Override
@@ -59,6 +63,7 @@ public abstract class DatabaseRoom extends RoomDatabase {
             //To remove all the data from previous application runs
             mCustomerDao.deleteAll();
             mProductDao.deleteAll();
+            mSaleDao.deleteAll();
 
             //insert few customer data
             Customer customer = new Customer("Ashutosh","9989","adfasd@email.com","Bangalore");
@@ -69,6 +74,8 @@ public abstract class DatabaseRoom extends RoomDatabase {
             //insert few products data
             Product product = new Product("Mechanical Notes", "ME101",8,2400,3000);
             mProductDao.insert(product);
+
+            //insert sale data
 
 
             return null;

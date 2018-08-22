@@ -28,7 +28,7 @@ public class CustomerRepository {
     }
 
     public void insert (Customer customer){
-        new insertAsyncTask(mCustomerDao).execute(customer);
+            new insertAsyncTask(mCustomerDao).execute(customer);
     }
 
     private static class insertAsyncTask extends AsyncTask<Customer, Void,Void>{

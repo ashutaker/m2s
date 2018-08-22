@@ -22,8 +22,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 public class Sale {
 
-    @NonNull
-    @PrimaryKey(autoGenerate = true)
+   @PrimaryKey(autoGenerate = true)
     private int id;
 
     private int customerId;
@@ -36,14 +35,17 @@ public class Sale {
 
     private Date saleDate;
 
+    private int sellingPrice;
+
     public Sale() {
     }
 
     @Ignore
-    public Sale(int customerId, int productId, String shippingType, Date saleDate) {
+    public Sale(int customerId, int productId, String shippingType, Date saleDate, int sellingPrice) {
         this.customerId = customerId;
         this.productId = productId;
         this.shippingType = shippingType;
         this.saleDate = saleDate;
+        this.sellingPrice = sellingPrice;
     }
 }
